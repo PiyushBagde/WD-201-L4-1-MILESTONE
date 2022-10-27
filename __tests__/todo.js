@@ -3,7 +3,7 @@
 /* eslint-disable quotes */
 /* eslint-disable no-undef */
 const todoList = require("../todo");
-const { all, add, markAsCompleted, overdue } = todoList();
+const { all, add, markAsCompleted, overdue, dueLater } = todoList();
 
 describe("TodoList Test Suite", () => {
   beforeAll(() => {
@@ -29,5 +29,11 @@ describe("TodoList Test Suite", () => {
   });
   test("Should ckeck retrieval of overdue items", () => {
     expect(overdue().length).toBe(0);
+  });
+  // test("Should ckeck retrieval of dueToday items", () => {
+  //   expect(dueToday().length).toBe(1);
+  // });
+  test("Should ckeck retrieval of dueLater items", () => {
+    expect(dueLater().length).toBe(0);
   });
 });
